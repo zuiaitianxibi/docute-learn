@@ -1,0 +1,86 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>My Docs123</title>
+    <link rel="stylesheet" href="https://unpkg.com/docute@4/dist/docute.css">
+  </head>
+  <body>
+    <div id="docute"></div>
+    <script src="https://unpkg.com/docute@4/dist/docute.js"></script>
+    <script>
+      new Docute({
+        target: '#docute',
+        title: 'Good Study',
+        nav: [
+          {
+            title: 'Home',
+            link: '/'
+          }, 
+          {
+            title: '天翼云',
+            link: 'http://www.ctyun.cn'
+          },
+          {
+            title: 'baidu',
+            link: 'https://www.baidu.com'
+          }
+        ],
+        sidebar: [
+            {
+              title: '指南',
+              links: [
+                {
+                  title: '开始',
+                  link: '/guide/start'
+                },
+                {
+                  title: '安装',
+                  link: '/guide/install'
+                }
+              ]
+            },
+            {
+              title: '进阶',
+              links: [
+                {
+                  title: '打包',
+                  link: '/advance/pack'
+                },
+                {
+                  title: '离线使用',
+                  link: '/advance/offline'
+                }
+              ]
+            }
+
+            
+        ],
+        // 让这些路径从不同的地方获取 Markdown 文件
+         overrides: {
+           '/v0.1/': {
+             sourcePath: 'https://raw.githubusercontent.com/user/repo/v0.1'
+           },
+           '/v0.2/': {
+             sourcePath: 'https://raw.githubusercontent.com/user/repo/v0.2'
+           }
+         },
+         // 用 `versions` 选项在侧边栏添加一个版本选择器
+         versions: {
+           'v1 (Latest)': {
+             link: '/'
+           },
+           'v0.2': {
+             link: '/v0.2/'
+           },
+           'v0.1': {
+             link: '/v0.1/'
+           }
+         }
+
+        
+      })
+    </script>
+  </body>
+</html>
